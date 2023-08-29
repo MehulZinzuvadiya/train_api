@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:train_api/Model/train_model.dart';
 
 import '../Provider/train_provider.dart';
 
@@ -20,13 +19,15 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Provider.of<TrainProvider>(context, listen: false).getTrain();
+    // Provider.of<TrainProvider>(context, listen: false).getTrain();
   }
 
   @override
   Widget build(BuildContext context) {
-    trainProviderT = Provider.of<TrainProvider>(context, listen: true);
-    trainProviderF = Provider.of<TrainProvider>(context, listen: false);
+    // trainProviderT = Provider.of<TrainProvider>(context, listen: true);
+    // trainProviderF = Provider.of<TrainProvider>(context, listen: false);
+    trainProviderT = context.watch<TrainProvider>();
+    trainProviderF = context.read<TrainProvider>();
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(

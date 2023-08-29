@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:train_api/Utils/api_helper.dart';
 
-class TrainProvider extends ChangeNotifier {
+class TrainProvider with ChangeNotifier {
   Future<List> getTrain() async {
     ApiHelper apiHelper = ApiHelper();
 
